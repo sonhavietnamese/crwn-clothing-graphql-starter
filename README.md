@@ -1,4 +1,4 @@
-# CRWN-CLOTHING-GRAPHQL-STARTER
+# CRWN Clothing GraphQL Starter
 
 This template will use for [Udemy GraphQL Section](https://www.udemy.com/course/complete-react-developer-zero-to-mastery).
 
