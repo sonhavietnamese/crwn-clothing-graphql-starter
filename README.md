@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# CRWN-CLOTHING-GRAPHQL-STARTER
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This template will use for [Udemy GraphQL Section](https://www.udemy.com/course/complete-react-developer-zero-to-mastery).
 
-## Available Scripts
+## Motivation
 
-In the project directory, you can run:
+There's a lot of problems when follow this course when code along the video section. Because of library version isn't match from current and in the video (I guess most of the videos in this course was recorded in aroung 2019 - 2020). Some of libraries version aren't support or conflict to each others so far.
+Ex: In this course, Yihua (the lecture) was using `react-script@3.0.0` and `node-sass@4.12.0`. You may get an error which is `Node Sass does not yet support your current environment`. You may need to use `sass` instead. Unfortunely, `react-scripts@3.0.0` which bundled by Webpack 4.19 which did not include `.sass` file loader. So you may need to upgrade react-scripts to `react-script@5.0.0` to compile `sass` file.
 
-### `npm start`
+In this Udemy lesson, will use 3 libraries which are `apollo-boost`, `react-apollo` and `graphql`. If you running on your own project or [start of lesson project](https://github.com/ZhangMYihua/graphql-lesson) you will get the error:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Full error image](repo-img\error.png 'Error cause by Webpack 5 and graphql')
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Because of currently, we use `react-scripts@5.0.0` which bundled by Webpack 5. Unfortunely, Webpack 5 causes an error with `graphql` library (shown above). How I fix these error and step by step to fix error by your own is in the
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repo
+2. Run `npm install` or `yarn`
+3. Run `npm start` or `yarn start`
 
-### `npm run build`
+## Fix in Existing Code
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you want to fix error directly in your code. Follow these step:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Run `npm run ejct`
+2. Go to `config/webpack.config.js`
+3. Move to `line 340`
+4. Include these config following
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+  {
+    test: /\.m?js/,
+    resolve: {
+      fullySpecified: false,
+    },
+  },
+```
 
-### `npm run eject`
+5. Your config file will look like this
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+  rules: [
+    {
+      test: /\.m?js/,
+      resolve: {
+        fullySpecified: false,
+      },
+    },
+  ...
+ ]
+```
