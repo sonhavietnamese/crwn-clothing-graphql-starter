@@ -11,7 +11,7 @@ In this Udemy lesson, will use 3 libraries which are `apollo-boost`, `react-apol
 
 ![Full error image](./repo-img/error.png 'Error cause by Webpack 5 and graphql')
 
-Because of currently, we use `react-scripts@5.0.0` which bundled by Webpack 5. unfortunately, Webpack 5 causes an error with `graphql` library (shown above). How I fix these errors and step by step to fix by your own is in (this section)[https://github.com/sonhaaa/crwn-clothing-graphql-starter#fix-in-existing-code]
+Because of currently, we use `react-scripts@5.0.0` which bundled by Webpack 5. unfortunately, Webpack 5 causes an error with `graphql` library (shown above). How I fix these errors and step by step to fix by your own is in [this section](https://github.com/sonhaaa/crwn-clothing-graphql-starter#fix-in-existing-code)
 
 ## Usage
 
@@ -21,7 +21,7 @@ Because of currently, we use `react-scripts@5.0.0` which bundled by Webpack 5. u
 
 ## Fix in Existing Code
 
-If you want to fix error directly in your code. Follow these step:
+If you want to fix error directly in your code. Follow these steps:
 
 1. Run `npm run eject`
 2. Go to `config/webpack.config.js`
@@ -51,4 +51,4 @@ If you want to fix error directly in your code. Follow these step:
  ]
 ```
 
-**Note: After run `npm eject`, when you open any file \*.(jsx|js) it may have an red underline in very top of these file. Just ignore it and continue to code.**
+**Note: After run `npm eject`, when you open any file \*.(jsx | js) it may have an red underline in very top of these file. Just ignore it and continue to code.**
